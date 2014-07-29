@@ -17,6 +17,7 @@
 #include <limits.h>
 #include <boost/cstdint.hpp>
 #include "RegManager.h"
+#include "../HWDescription/Definition.h"
 #include "../HWDescription/CbcRegItem.h"
 #include "../HWDescription/Cbc.h"
 #include "../HWDescription/Module.h"
@@ -36,10 +37,12 @@ namespace Ph2_HwInterface
     class CbcInterface : public RegManager
     {
         private:
-            std::string fStrSram, fStrOtherSram, fStrSramUserLogic, fStrFull, fStrReadout;
+            std::string fStrSram = SRAM1;
+            std::string fStrOtherSram = SRAM2;
+            std::string fStrOtherSramUserLogic = SRAM2_USR_LOGIC;
+            std::string fStrSramUserLogic = SRAM1_USR_LOGIC;
 
         private:
-            void SelectSRAM(uint32_t pCbcId);
             /*!
             * \brief Detect the right FE Id to write the right registers (not tested)
             */

@@ -54,7 +54,8 @@
 		    <node id ="v6_cpld"				mask="0x03f00000"/>
 		    <node id ="cdce_lock"			mask="0x10000000"/>
 	</node>
-	<node id="ctrl_sram" address="0x00000008"	permission="rw" mode="single">
+
+    <node id="ctrl_sram" address="0x00000008"	permission="rw" mode="single">
 		<node id="sram1_user_logic"			mask="0x00000001" tags="checkbox" description="0: the software has access to the SRAM1 bank, 1:firmware"/>
 		<node id="sram1_bist_run"			mask="0x00000002"/>
 		<node id="sram2_user_logic"			mask="0x00010000" tags="checkbox" description="0: the software has access to the SRAM2 bank, 1:firmware"/>
@@ -66,7 +67,7 @@
 	<node id="sram1_256" address="0x020000ff" permission="rw" mode="single" description="SRAM1 256th word"/>
 	<node id="sram2" address="0x04000000" permission="rw" mode="block" size="0x00800000" description="SRAM2 bank address"/>
 	<node id="sram2_256" address="0x040000ff" permission="rw" mode="single" description="SRAM2 256th word"/>
-	
+
 	<!--node id="freq_ttc_fmc"			address="0x40000001"    permission="r" mode="single"/-->
 
     <node id="cbc_i2c_cmd_ack"  address="0x80000008"    mask="0x0000000C" permission="rw" description="Hand shaking before reading result of I2C request. 0:Wait, 1:OK"/>
@@ -90,7 +91,7 @@
     <node id="break_trigger" 	address="0x8000000C" mask="0x00000001" permission="rw"  description="1: The acquisition is paused, 0: The acquisition is resumed (the events that had not been sent are lost)"/>
     <node id="COMMISSIONNING_MODE_RQ"   address="0x8000000c"    mask="0x00000002"       permission="rw" tags="checkbox" description="1:The acquisition commissioning mode is requested"/>
     <node id="COMMISSIONNING_MODE_DELAY_AFTER_FAST_RESET"       address="0x8000000c"    mask="0x0003fffc"       permission="rw" description="Delay (ms ?) after fast reset in commissioning mode"/>
-    <node id="COMMISSIONNING_MODE_CBC_TEST_PULSE_VALID"		address="0x8000000c"	mask="0x00040000"	permission="rw" tags="checkbox"  description="Test pulse generated during commissioning mode"/>    
+    <node id="COMMISSIONNING_MODE_CBC_TEST_PULSE_VALID"		address="0x8000000c"	mask="0x00040000"	permission="rw" tags="checkbox"  description="Test pulse generated during commissioning mode"/>
 <!--  reg(13) -->
     <node id="COMMISSIONNING_MODE_DELAY_AFTER_TEST_PULSE"       address="0x8000000d"    mask="0x0000ffff"       permission="rw" description="Delay after test pulse in commissioning mode"/>
     <node id="COMMISSIONNING_MODE_DELAY_AFTER_L1A"      address="0x8000000d"    mask="0xffff0000"       permission="rw" description="Delay after L1A trigger during commissioning mode"/>
@@ -138,9 +139,9 @@
 			<node id = "sTTS_code"		mask="0x0000000F" description="?"/>
 			<node id = "fifo1_full"		mask="0x00000010" description="?"/>
 			<node id = "fifo2_full"		mask="0x00000020" description="?"/>
-			<node id = "cdr_clk_locked"	mask="0x00000040" description="?"/> 
-			<node id = "cdr_lol"		mask="0x00000080" description="?"/> 
-			<node id = "cdr_los"		mask="0x00000100" description="?"/> 
+			<node id = "cdr_clk_locked"	mask="0x00000040" description="?"/>
+			<node id = "cdr_lol"		mask="0x00000080" description="?"/>
+			<node id = "cdr_los"		mask="0x00000100" description="?"/>
 			<node id = "FSM_sTTS_ctrl"	mask="0x00001E00" description="?"/>
 			<node id = "spurious_frame"	mask="0x00002000" description="1: A spurious frame has been sent ?"/>
 			<node id = "CMD_START_VALID"	mask="0x00004000" description="1: Acquisition start validated by firmware"/>

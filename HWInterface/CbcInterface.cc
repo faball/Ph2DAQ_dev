@@ -16,9 +16,6 @@
 #include <time.h>
 #include "CbcInterface.h"
 #include "Exception.h"
-#include "../HWDescription/Definition.h"
-#include "../HWDescription/Module.h"
-#include "../HWDescription/Cbc.h"
 
 #define DEV_FLAG                0
 
@@ -60,16 +57,6 @@ namespace Ph2_HwInterface
     */
 
 
-    void CbcInterface::SelectSRAM(uint32_t pCbcId)
-    {
-        fStrSram  = (pCbcId==0 ? SRAM1 : SRAM2);
-        fStrOtherSram = (pCbcId==0 ? SRAM2 : SRAM1);
-        fStrSramUserLogic =  (pCbcId==0 ? SRAM1_USR_LOGIC : SRAM2_USR_LOGIC);
-        fStrFull = (pCbcId==0 ? SRAM1_FULL : SRAM2_FULL);
-        fStrReadout= (pCbcId==0 ? SRAM1_END_READOUT : SRAM2_END_READOUT);
-    }
-
-
     bool CbcInterface::I2cCmdAckWait( uint32_t pAckVal, uint8_t pNcount )
     {
         unsigned int cWait(100);
@@ -109,16 +96,26 @@ namespace Ph2_HwInterface
     void CbcInterface::SendBlockCbcI2cRequest(std::vector<uint32_t>& pVecReq, bool pWrite)
     {
 
+        WriteReg(CBC_HARD_RESET,0);
+        WriteReg(PC_CONFIG_OK,0);
+
         WriteReg(fStrSramUserLogic,1);
 
 		pVecReq.push_back(0xFFFFFFFF);
 
-		WriteReg(fStrSramUserLogic,0);
+		WriteReg(fStrOtherSramUserLogic,0);
 
-		WriteBlockReg(fStrSram,pVecReq);
         WriteReg(fStrOtherSram,0xFFFFFFFF);
 
-		WriteReg(fStrSramUserLogic,1);
+        WriteReg(fStrOtherSramUserLogic,1);
+
+
+        WriteReg(fStrSramUserLogic,0);
+
+		WriteBlockReg(fStrSram,pVecReq);
+
+        WriteReg(fStrSramUserLogic,1);
+
 
         WriteReg(CBC_HARD_RESET,0);
 
@@ -147,10 +144,10 @@ namespace Ph2_HwInterface
 
         WriteReg(fStrSramUserLogic,0);
 
-		uhal::ValVector<uint32_t> cData = ReadBlockReg(fStrSram,pVecReq.size());
+		uhal::ValVector<uint32_t> cData = ReadBlockReg(fStrSram,pVecReq.size()+1);
 
 		WriteReg(fStrSramUserLogic,1);
-		WriteReg(CBC_I2C_CMD_RQ,0);
+		//WriteReg(CBC_I2C_CMD_RQ,0);
 
 		std::vector<uint32_t>::iterator it = pVecReq.begin();
 		uhal::ValVector< uint32_t >::const_iterator itValue = cData.begin();
@@ -192,7 +189,6 @@ namespace Ph2_HwInterface
 #endif
 
 		EnableI2c(pCbc,1);
-        SelectSRAM(uint32_t(pCbc->getCbcId()));
 
 		try
 		{
@@ -234,7 +230,7 @@ namespace Ph2_HwInterface
 #endif
 
 		EnableI2c(pCbc,1);
-        SelectSRAM(uint32_t(pCbc->getCbcId()));
+
 
 		try
 		{

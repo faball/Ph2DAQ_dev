@@ -20,6 +20,10 @@
 
 using namespace Ph2_HwDescription;
 
+/*!
+* \namespace Ph2_HwInterface
+* \brief Namespace regrouping all the interfaces to the hardware
+*/
 namespace Ph2_HwInterface
 {
 

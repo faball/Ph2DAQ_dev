@@ -22,12 +22,20 @@
 
 using namespace Ph2_HwDescription;
 
+/*!
+* \namespace Ph2_HwInterface
+* \brief Namespace regrouping all the interfaces to the hardware
+*/
 namespace Ph2_HwInterface
 {
 
-	typedef std::map<uint32_t, char*> FeEventMap;
-	typedef std::map<uint32_t, FeEventMap> EventMap;
+	typedef std::map<uint32_t, char*> FeEventMap; /*!< Event Map of Cbc */
+	typedef std::map<uint32_t, FeEventMap> EventMap; /*!< Event Map of FE */
 
+	/*!
+	* \class Event
+	* \brief Event container to manipulate event flux from the Cbc
+	*/
 	class Event
     {
 

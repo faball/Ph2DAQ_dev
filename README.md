@@ -85,8 +85,8 @@ Last Updates
 
 - 09/07/14 : Added threading for stack writing registers
 - 10/07/14 : Read Data from acquisition in a rubbish format
-- 25/07/14 : Fully functional for 2CBC (safe from Broadcast obviously), pending for 8CBC
-
+- ~~25/07/14 : Fully functional for 2CBC (safe from Broadcast obviously), pending for 8CBC~~
+- 30/07/14 : Working 8CBC version with latest firmware
 
 Future Improvements
 -------------------

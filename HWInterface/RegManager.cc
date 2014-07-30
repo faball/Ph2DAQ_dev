@@ -14,7 +14,7 @@
 #include "Utilities.h"
 #include "../HWDescription/Definition.h"
 
-#define DEV_FLAG    1
+#define DEV_FLAG    0
 
 namespace Ph2_HwInterface
 {
@@ -24,7 +24,7 @@ namespace Ph2_HwInterface
         fDeactiveThread(false)
     {
         // Loging settings
-        //uhal::disableLogging();
+        uhal::disableLogging();
         //uhal::setLogLevelTo(uhal::Error()); //Raise the log level
 
         fUHalConfigFileName = puHalConfigFileName;

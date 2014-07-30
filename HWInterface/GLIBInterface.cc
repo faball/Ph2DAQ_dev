@@ -21,7 +21,7 @@
 #include "Utilities.h"
 #include "../HWDescription/Definition.h"
 
-#define DEV_FLAG         0
+#define DEV_FLAG         1
 
 
 namespace Ph2_HwInterface

@@ -12,7 +12,7 @@
 //------------------------------------------------------------------------------
 //uHal Connection File
 
-#define UHAL_CONNECTION_FILE "file:///afs/cern.ch/user/n/npierre/dev/settings/connections.xml"
+#define UHAL_CONNECTION_FILE "file:///afs/cern.ch/user/n/npierre/8CBC/settings/connections.xml"
 
 
 //-----------------------------------------------------------------------------
@@ -122,17 +122,17 @@
 #define CBC_I2C_CMD_ACK_FE2  "cbc_i2c_cmd_ack_fe2"
 
     //CBC I2C command request
-#define CBC_I2C_CMD_RQ       "cbc_i2c_cmd_rq_fe1"
+#define CBC_I2C_CMD_RQ       "cbc_i2c_cmd_rq"
 #define CBC_I2C_CMD_RQ_FE1   "cbc_i2c_cmd_rq_fe1"
 #define CBC_I2C_CMD_RQ_FE2   "cbc_i2c_cmd_rq_fe2"
 
     //CBC Hard Reset
-#define CBC_HARD_RESET       "cbc_hard_reset_fe1"
+#define CBC_HARD_RESET       "cbc_hard_reset"
 #define CBC_HARD_RESET_FE1   "cbc_hard_reset_fe1"
 #define CBC_HARD_RESET_FE2   "cbc_hard_reset_fe2"
 
     //CBC Fast Reset
-#define CBC_FAST_RESET       "cbc_fast_reset_fe1"
+#define CBC_FAST_RESET       "cbc_fast_reset"
 #define CBC_FAST_RESET_FE1   "cbc_fast_reset_fe1"
 #define CBC_FAST_RESET_FE2   "cbc_fast_reset_fe2"
 

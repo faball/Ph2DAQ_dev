@@ -17,7 +17,7 @@
 #include "CbcInterface.h"
 #include "Exception.h"
 
-#define DEV_FLAG                0
+#define DEV_FLAG                1
 
 namespace Ph2_HwInterface
 {
@@ -81,7 +81,7 @@ namespace Ph2_HwInterface
 				usleep( cWait );
 			}
 
-		} while (cVal!= pAckVal && ++cLoop<MAX_NB_LOOP);
+		} while (cVal!= pAckVal /*&& ++cLoop<MAX_NB_LOOP*/);
 
 		if (cLoop>=MAX_NB_LOOP)
         {
@@ -119,6 +119,8 @@ namespace Ph2_HwInterface
 
         WriteReg(CBC_HARD_RESET,0);
 
+        WriteReg(FPGA_CLKOUT_MUXSEL,0)
+
         //r/w request
 		WriteReg(CBC_I2C_CMD_RQ,pWrite ? 3: 1);
 
@@ -147,7 +149,7 @@ namespace Ph2_HwInterface
 		uhal::ValVector<uint32_t> cData = ReadBlockReg(fStrSram,pVecReq.size()+1);
 
 		WriteReg(fStrSramUserLogic,1);
-		//WriteReg(CBC_I2C_CMD_RQ,0);
+		WriteReg(CBC_I2C_CMD_RQ,0);
 
 		std::vector<uint32_t>::iterator it = pVecReq.begin();
 		uhal::ValVector< uint32_t >::const_iterator itValue = cData.begin();

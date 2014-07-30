@@ -70,7 +70,8 @@
 
 	<!--node id="freq_ttc_fmc"			address="0x40000001"    permission="r" mode="single"/-->
 
-    <node id="cbc_i2c_cmd_ack"  address="0x80000008"    mask="0x0000000C" permission="rw" description="Hand shaking before reading result of I2C request. 0:Wait, 1:OK"/>
+    <node id="cbc_i2c_cmd_ack_fe1"  address="0x80000008"    mask="0x0000000C" permission="rw" description="Hand shaking before reading result of I2C request. 0:Wait, 1:OK"/>
+    <node id="cbc_i2c_cmd_ack_fe2"  address="0x80000008"    mask="0x00000030" permission="rw" description="Hand shaking before reading result of I2C request. 0:Wait, 1:OK"/>
 
     <node id="cbc_hard_reset"	address="0x80000009"	mask="0x00000002"	permission="rw" description="CBC hard reset"/>
     <node id="cbc_i2c_refresh"	address="0x80000009"	mask="0x00000004"	permission="rw" description="?"/>
@@ -84,6 +85,8 @@
     <node id="cbc_fast_reset_fe2"	address="0x80000009"	mask="0x00020000"	permission="rw" description="?"/>
     <node id="cbc_i2c_cmd_rq_fe2"	address="0x80000009"	mask="0x000c0000"	permission="rw" description="?"/>
     <node id="cbc_stubdata_latency_adjust_fe2"	address="0x80000009"	mask="0x07f00000"	permission="rw" description="?"/>
+
+    <node id="FPGA_CLKOUT_MUXSEL"  address="0x80000003"    mask="0x00000001" permission="rw"/>
 
     <node id="nb_FE" 	address="0x8000000A" permission="rw" mode="single" tags=""/>
     <node id="hybrid_type" 	address="0x8000000B" permission="rw" mode="single" tags=""/>

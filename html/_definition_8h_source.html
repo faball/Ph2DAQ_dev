@@ -136,9 +136,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="_definition_8h.html#a11a0148c64950f3315f38d957cd43d37">   42</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define I2C_READ_ADDR     0x06</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="_definition_8h.html#ab15137f7c592d05573de99f078516157">   44</a></span>&#160;<span class="preprocessor">#define I2C_SLAVE         0x5B</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="_definition_8h.html#ae308275dafb538f2511ea285fea768d0">   45</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define I2C_COMMAND       &quot;user_wb_ttc_fmc_regs.cbc_reg_i2c_command&quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="_definition_8h.html#a46aaa2293185dfc3cd655f65bea7f614">   46</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define I2C_REPLY         &quot;user_wb_ttc_fmc_regs.cbc_reg_i2c_reply&quot;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="_definition_8h.html#a15db09e24617ea5c5843213672ac8a03">   47</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define I2C_SETTINGS      &quot;user_wb_ttc_fmc_regs.cbc_reg_i2c_settings&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="_definition_8h.html#ae308275dafb538f2511ea285fea768d0">   45</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define I2C_COMMAND       &quot;user_wb_ttc_fmc_regs.i2c_command&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="_definition_8h.html#a46aaa2293185dfc3cd655f65bea7f614">   46</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define I2C_REPLY         &quot;user_wb_ttc_fmc_regs.i2c_reply&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="_definition_8h.html#a15db09e24617ea5c5843213672ac8a03">   47</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define I2C_SETTINGS      &quot;user_wb_ttc_fmc_regs.i2c_settings&quot;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="_definition_8h.html#a30957298974d3b5c605a9e6e3cf33ff9">   49</a></span>&#160;<span class="preprocessor">#define MAX_NB_LOOP       50</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor"></span></div>
@@ -206,27 +206,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="_definition_8h.html#af707b6c693823387a84c1ae5b5dc01c7">  112</a></span>&#160;<span class="preprocessor">#define CBC_TRIGGER_1SHOT    &quot;user_wb_ttc_fmc_regs.cbc_acquisition.CBC_TRIGGER_ONE_SHOT&quot;</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">//CBC stubdata latency adjustement</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="_definition_8h.html#a74f2bb936c6db739349d53796624df22">  115</a></span>&#160;<span class="preprocessor">#define CBC_STUB_LATENCY     &quot;cbc_stubdata_latency_adjust_fe2&quot;</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="_definition_8h.html#a74f2bb936c6db739349d53796624df22">  115</a></span>&#160;<span class="preprocessor">#define CBC_STUB_LATENCY     &quot;cbc_stubdata_latency_adjust&quot;</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="_definition_8h.html#adcbbe8574bdf346be21ae23451c410ec">  116</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CBC_STUB_LATENCY_FE1 &quot;cbc_stubdata_latency_adjust_fe1&quot;</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="_definition_8h.html#a99153490571202993a0d92d1ffb62df0">  117</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CBC_STUB_LATENCY_FE2 &quot;cbc_stubdata_latency_adjust_fe2&quot;</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">//CBC I2C command acknoledgement</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="_definition_8h.html#a980fdc4242ab14da9fcd648b1e9a50a4">  120</a></span>&#160;<span class="preprocessor">#define CBC_I2C_CMD_ACK      &quot;cbc_i2c_cmd_ack_fe2&quot;</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="_definition_8h.html#a980fdc4242ab14da9fcd648b1e9a50a4">  120</a></span>&#160;<span class="preprocessor">#define CBC_I2C_CMD_ACK      &quot;cbc_i2c_cmd_ack_fe1&quot;</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="_definition_8h.html#a8a4f3b344351ac3f9e05f3a3d27ffbf6">  121</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CBC_I2C_CMD_ACK_FE1  &quot;cbc_i2c_cmd_ack_fe1&quot;</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="_definition_8h.html#ad7ef355ab00621a8d2984b3a4d2b5336">  122</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CBC_I2C_CMD_ACK_FE2  &quot;cbc_i2c_cmd_ack_fe2&quot;</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">//CBC I2C command request</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="_definition_8h.html#aa92f4a416201bbe9742da9f72ba0bb46">  125</a></span>&#160;<span class="preprocessor">#define CBC_I2C_CMD_RQ       &quot;cbc_i2c_cmd_rq_fe2&quot;</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="_definition_8h.html#aa92f4a416201bbe9742da9f72ba0bb46">  125</a></span>&#160;<span class="preprocessor">#define CBC_I2C_CMD_RQ       &quot;cbc_i2c_cmd_rq&quot;</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="_definition_8h.html#a27f1d47d65b52569c75ae7abb12c850c">  126</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CBC_I2C_CMD_RQ_FE1   &quot;cbc_i2c_cmd_rq_fe1&quot;</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="_definition_8h.html#a386e61ed089e53095e19b1dded969001">  127</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CBC_I2C_CMD_RQ_FE2   &quot;cbc_i2c_cmd_rq_fe2&quot;</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">//CBC Hard Reset</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="_definition_8h.html#a339750768b74eeb2a5e15d27002e5ed1">  130</a></span>&#160;<span class="preprocessor">#define CBC_HARD_RESET       &quot;cbc_hard_reset_fe2&quot;</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="_definition_8h.html#a339750768b74eeb2a5e15d27002e5ed1">  130</a></span>&#160;<span class="preprocessor">#define CBC_HARD_RESET       &quot;cbc_hard_reset&quot;</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="_definition_8h.html#a1afae7c30406c0520e384fa1806e97ca">  131</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CBC_HARD_RESET_FE1   &quot;cbc_hard_reset_fe1&quot;</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="_definition_8h.html#ae6dcd5d0b1ff293b4ad62fe648e34127">  132</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CBC_HARD_RESET_FE2   &quot;cbc_hard_reset_fe2&quot;</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">//CBC Fast Reset</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="_definition_8h.html#a46c24affadd18b38f8f180c29996c917">  135</a></span>&#160;<span class="preprocessor">#define CBC_FAST_RESET       &quot;cbc_fast_reset_fe2&quot;</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="_definition_8h.html#a46c24affadd18b38f8f180c29996c917">  135</a></span>&#160;<span class="preprocessor">#define CBC_FAST_RESET       &quot;cbc_fast_reset&quot;</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="_definition_8h.html#a14ca43ce56b6ba3282562ec26d4dd1d4">  136</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CBC_FAST_RESET_FE1   &quot;cbc_fast_reset_fe1&quot;</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="_definition_8h.html#aac0c28e4301536787f75b2b7c8f8a4ab">  137</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CBC_FAST_RESET_FE2   &quot;cbc_fast_reset_fe2&quot;</span></div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor"></span></div>
@@ -339,7 +339,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 21 2014 14:19:08 for Ph2_DAQ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 30 2014 20:46:13 for Ph2_DAQ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -8,7 +8,7 @@ var searchData=
   ['setevent',['SetEvent',['../class_ph2___hw_interface_1_1_event.html#a67bf8cfaeaec158907932be40b37601d',1,'Ph2_HwInterface::Event']]],
   ['setfeid',['setFeId',['../class_ph2___hw_description_1_1_front_end_description.html#aef118ad340a54c824da417c9f36816d7',1,'Ph2_HwDescription::FrontEndDescription']]],
   ['setfmcid',['setFMCId',['../class_ph2___hw_description_1_1_front_end_description.html#a55bea01460c40941b418f8cf45b50866',1,'Ph2_HwDescription::FrontEndDescription']]],
-  ['setreg',['setReg',['../class_ph2___hw_description_1_1_be_board.html#a7651d75760d934d237a2df889ba4e73c',1,'Ph2_HwDescription::BeBoard::setReg()'],['../class_ph2___hw_description_1_1_cbc.html#aa24292fe56d6b19ec08ba67f9790b5c7',1,'Ph2_HwDescription::Cbc::setReg()']]],
+  ['setreg',['setReg',['../class_ph2___hw_description_1_1_be_board.html#a933f9d5f715fbe9187f6aa79589cb55c',1,'Ph2_HwDescription::BeBoard::setReg()'],['../class_ph2___hw_description_1_1_cbc.html#aa24292fe56d6b19ec08ba67f9790b5c7',1,'Ph2_HwDescription::Cbc::setReg()']]],
   ['setshelveid',['setShelveId',['../class_ph2___hw_description_1_1_front_end_description.html#a97a696025936be0a15120568bfc2b7f4',1,'Ph2_HwDescription::FrontEndDescription']]],
   ['setstatus',['setStatus',['../class_ph2___hw_description_1_1_front_end_description.html#a52c109ef30172eef0e74bf6a2370ca71',1,'Ph2_HwDescription::FrontEndDescription']]],
   ['settriggerlatency',['setTriggerLatency',['../class_ph2___hw_description_1_1_cbc.html#af2ca8a515be91e594345f59765eedc86',1,'Ph2_HwDescription::Cbc']]],

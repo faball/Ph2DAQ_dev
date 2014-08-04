@@ -312,6 +312,41 @@ namespace Ph2_HwInterface
 
 		WriteCbcBlockReg(pCbc,cVecReq);
 
+		if(VERIFICATION_LOOP)
+		{
+			std::vector<uint32_t> cWriteValue, cReadValue, cVecReqBis;
+			uint8_t cCbcId = pCbc->getCbcId();
+			CbcRegItem cRegItem;
+
+			for(int32_t i=0;i<cVecReq.size();i++)
+			{
+				DecodeReg(cRegItem,cCbcId,cVecReq[i]);
+
+				cWriteValue.push_back(cRegItem.fValue);
+				cRegItem.fValue = 0;
+
+				EncodeReg(cRegItem,pCbc->fCbcId,cVecReqBis);
+
+				ReadCbcBlockReg(pCbc,cVecReqBis);
+
+				DecodeReg(cRegItem,cCbcId,cVecReqBis[0]);
+
+				cReadValue.push_back(cRegItem.fValue);
+
+				cVecReqBis.clear();
+
+				if(cReadValue[i] != cWriteValue[i])
+				{
+					std::cout << "\nERROR !!!\nValues are not coinciding :\n" << "Written Value : " << cWriteValue[i] << "\nReadback Value : " << cReadValue[i] << "\n" << std::endl;
+				}
+				else
+				{
+					std::cout << "Writing correctly done :\n" << "Written Value : " << cWriteValue[i] << "\nReadback Value : " << cReadValue[i] << std::endl;
+				}
+			}
+
+		}
+
 #ifdef __CBCDAQ_DEV__
 		if(  DEV_FLAG ){
 			gettimeofday( &end, 0 );

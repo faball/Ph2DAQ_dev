@@ -275,11 +275,10 @@ int main()
                                         {
                                             cCbc = new Cbc(0,0,0,0,i,(boost::format("settings/FE0CBC%d.txt") %(uint32_t(i))).str());
                                             cGlib.getModule(cModuleId)->addCbc(*cCbc);
+                                            cCbcInterface.ConfigureCbc(cGlib.getModule(cModuleId)->getCbc(i));
                                             delete cCbc;
                                         }
                                     }
-
-                                    cCbcInterface.UpdateAllCbc(cGlib.getModule(cModuleId));
 
                                     std::cout << "*** 8Cbc Hybrid Structure Added ***" << std::endl;
                                 }

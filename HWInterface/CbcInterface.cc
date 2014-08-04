@@ -15,10 +15,11 @@
 #include <boost/thread.hpp>
 #include <time.h>
 #include "CbcInterface.h"
+#include "Utilities.h"
 #include "Exception.h"
 
-#define DEV_FLAG                0
-#define VERIFICATION_LOOP       0
+#define DEV_FLAG                1
+#define VERIFICATION_LOOP       1
 
 namespace Ph2_HwInterface
 {
@@ -318,6 +319,8 @@ namespace Ph2_HwInterface
 			uint8_t cCbcId = pCbc->getCbcId();
 			CbcRegItem cRegItem;
 
+			myflush( std::cin );
+
 			for(int32_t i=0;i<cVecReq.size();i++)
 			{
 				DecodeReg(cRegItem,cCbcId,cVecReq[i]);
@@ -337,7 +340,9 @@ namespace Ph2_HwInterface
 
 				if(cReadValue[i] != cWriteValue[i])
 				{
-					std::cout << "\nERROR !!!\nValues are not coinciding :\n" << "Written Value : " << cWriteValue[i] << "\nReadback Value : " << cReadValue[i] << "\n" << std::endl;
+					std::cout << "\nERROR !!!\nValues are not coinciding :\n" << "Written Value : " << cWriteValue[i] << "\nReadback Value : " << cReadValue[i] << std::endl;
+					std::cout << "Register Adress : " << uint32_t(cRegItem.fAddress) << std::endl;
+					mypause();
 				}
 				else
 				{

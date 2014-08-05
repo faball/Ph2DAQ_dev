@@ -18,8 +18,8 @@
 #include "Utilities.h"
 #include "Exception.h"
 
-#define DEV_FLAG                1
-#define VERIFICATION_LOOP       1
+#define DEV_FLAG                0
+#define VERIFICATION_LOOP       0
 
 namespace Ph2_HwInterface
 {

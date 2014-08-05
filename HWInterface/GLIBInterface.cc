@@ -82,6 +82,7 @@ namespace Ph2_HwInterface
         std::cout << "FMC User Board ID : " << uint32_t(ReadReg(FMC_USER_BOARD_ID)) << std::endl;
         std::cout << "FMC User System ID : " << uint32_t(ReadReg(FMC_USER_SYS_ID)) << std::endl;
         std::cout << "FMC User Version : " << uint32_t(ReadReg(FMC_USER_VERSION)) << std::endl;
+        std::cout << "Number of Cbcs : " << uint32_t(ReadReg(HYBRID_TYPE)) << std::endl;
 
     }
 

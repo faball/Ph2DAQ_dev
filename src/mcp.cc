@@ -802,11 +802,7 @@ int main()
                 std::cout << "***               Acquisition-ish                ***" << std::endl;
                 std::cout << "****************************************************\n" << std::endl;
 
-                std::cout << "1: Start" << std::endl;
-                std::cout << "2: Pause" << std::endl;
-                std::cout << "3: UnPause" << std::endl;
-                std::cout << "4: Stop" << std::endl;
-                std::cout << "5: Read Data\n" << std::endl;
+                std::cout << "1: Read Data\n" << std::endl;
 
                 std::cin >> i;
 
@@ -814,36 +810,6 @@ int main()
                 {
 
                     case 1:
-                        std::cout << "*** Start ***" << std::endl;
-                        cGlibInterface.Start(cGlib);
-                        std::cout << "*** Started ***" << std::endl;
-                    break;
-
-
-                    case 2:
-                        std::cout << "*** Pause ***" << std::endl;
-                        cGlibInterface.Pause(cGlib);
-                        std::cout << "*** Paused ***" << std::endl;
-                    break;
-
-
-                    case 3:
-                        std::cout << "*** UnPause ***" << std::endl;
-                        cGlibInterface.Unpause(cGlib);
-                        std::cout << "*** UnPaused ***" << std::endl;
-                    break;
-
-
-                    case 4:
-                        std::cout << "*** Stop ***" << std::endl;
-                        std::cout << "--> Nth Acq ?" << std::endl;
-                        std::cin >> cNthAcq;
-                        cGlibInterface.Stop(cGlib,cNthAcq);
-                        std::cout << "*** Stopped ***" << std::endl;
-                    break;
-
-
-                    case 5:
                         std::cout << "*** Run Acquisition ***" << std::endl;
 
                         cGlibInterface.Run(cGlib);

@@ -93,7 +93,7 @@ namespace Ph2_HwInterface
 			for(FeEventMap::iterator cJt = cIt->second.begin(); cJt != cIt->second.end(); cJt++ )
 			{
 				uint8_t CbcId = uint8_t(cJt->first);
-				cJt->second = &pEvent[OFFSET_FE_EVENT + FeId * FE_NCHAR + CbcId * CBC_NCHAR];
+				cJt->second = &pEvent[OFFSET_FE_EVENT + /*FeId **/ FE_NCHAR + CbcId * CBC_NCHAR];
 			}
 		}
 

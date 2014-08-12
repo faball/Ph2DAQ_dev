@@ -279,7 +279,7 @@ int main()
                                         }
                                     }
 
-                                    UpdateAllCbc(cGlib.getModule(cModuleId));
+                                    cCbcInterface.UpdateAllCbc(cGlib.getModule(cModuleId));
 
                                     std::cout << "*** 2Cbc Structure Added ***" << std::endl;
                                 }

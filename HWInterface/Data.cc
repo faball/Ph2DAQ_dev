@@ -30,16 +30,14 @@ namespace Ph2_HwInterface
     //--------------------------------------------------------------------------
     //Data Class
 
-    Data::Data(BeBoard& pBoard, uint32_t pNbCbc):
+    Data::Data(BeBoard& pBoard):
         fBuf(0),
-        fCurrentEvent(0),
-        fEvent(pNbCbc)
+        fCurrentEvent(0)
     {
         fEvent.AddBoard(pBoard);
     }
 
-    Data::Data( Data &pD ):
-        fEvent(0)
+    Data::Data( Data &pD )
     {
         fBuf = 0;
         Initialise( pD.fNevents);
@@ -144,7 +142,7 @@ namespace Ph2_HwInterface
     const Event *Data::GetNextEvent()
     {
         if( fCurrentEvent >= fNevents ) return 0;
-        fEvent.SetEvent( &fBuf[ fCurrentEvent * fEvent.fEventSize * 4 ] );
+        fEvent.SetEvent( &fBuf[ fCurrentEvent * PACKET_SIZE * 4 ] );
         fCurrentEvent++;
         return &fEvent;
     }

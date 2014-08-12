@@ -74,7 +74,7 @@ namespace Ph2_HwInterface
     {
 
         fNevents = pNevents;
-        fBufSize = ( fNevents + 1 ) * PACKET_SIZE * 4;
+        fBufSize = ( fNevents + 1 ) * EVENT_SIZE_32 * 4;
         if( fBuf )
             free( fBuf );
         fBuf = (char *) malloc( fBufSize );
@@ -92,7 +92,7 @@ namespace Ph2_HwInterface
     {
 
         fNevents = pNevents;
-        fBufSize = ( fNevents + 1 ) * PACKET_SIZE * 4;
+        fBufSize = ( fNevents + 1 ) * EVENT_SIZE_32 * 4;
         if( fBuf )
             free( fBuf );
         fBuf = (char *) malloc( fBufSize );

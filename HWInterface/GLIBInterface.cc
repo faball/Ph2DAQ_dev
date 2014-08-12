@@ -324,7 +324,7 @@ namespace Ph2_HwInterface
 
 		uhal::ValWord<uint32_t> cVal;
 		uint32_t cNPackets= EVENT_NUMBER+1;
-		uint32_t cBlockSize = cNPackets * PACKET_SIZE;
+		uint32_t cBlockSize = cNPackets * EVENT_SIZE_32;
 
 		//Wait for start acknowledge
 		do
@@ -530,6 +530,8 @@ namespace Ph2_HwInterface
                 fStop = true;
                 break;
             }
+
+            cNthAcq++;
 
         }
 

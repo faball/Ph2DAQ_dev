@@ -181,10 +181,10 @@
 #define OFFSET_EVENT_COUNT_CBC     4*32+8
 #define WIDTH_EVENT_COUNT_CBC      3*8
 #define OFFSET_FE_EVENT            5*4
-#define WIDTH_FE_EVENT             9*4*2            //CBC_NCHAR*2
-#define OFFSET_TDC                 5*32+9*4*2       //5*32+WIDTH_FE_EVENT
+#define WIDTH_FE_EVENT             9*4*8            //CBC_NCHAR*8
+#define OFFSET_TDC                 5*32+9*16*32       //5*32+WIDTH_FE_EVENT
 #define WIDTH_TDC                  32
-#define FE_NCHAR                   9*4*2            //CBC_NCHAR*2
+#define FE_NCHAR                   9*4*8            //CBC_NCHAR*8
 
 
     //Cbc Event
@@ -234,9 +234,6 @@
 
     //Polarity
 #define POLARITY        "user_wb_ttc_fmc_regs.pc_commands2.polarity_tlu"
-
-    //Packet size
-#define PACKET_SIZE      32
 
     //Time out for stack writing
 #define TIME_OUT         5

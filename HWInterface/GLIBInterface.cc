@@ -247,9 +247,6 @@ namespace Ph2_HwInterface
 
         ChooseBoard(pGlib.getBeId());
 
-        //Select SRAM
-        SelectSRAM( pNthAcq );
-
         //Stop the DAQ
         cPairReg.first = BREAK_TRIGGER; cPairReg.second = 1;
         cVecReg.push_back(cPairReg);
@@ -340,10 +337,6 @@ namespace Ph2_HwInterface
 		mtime = getTimeTook( start, 1 );
 		std::cout << "GlibController::ReadData()  Time took for the CMD_START_VALID flag to be set: " << std::dec << mtime << " ms." << std::endl;
 #endif
-
-		//FIFO goes to write_data state
-		//Select SRAM
-		SelectSRAM( pNthAcq );
 
 #ifdef __CBCDAQ_DEV__
 		gettimeofday(&start, 0);
@@ -460,6 +453,7 @@ namespace Ph2_HwInterface
         while(!fStop)
         {
 
+            SelectSRAM( cNthAcq );
             Start(pGlib);
             ReadData(pGlib, cNthAcq, true );
             Stop(pGlib, cNthAcq );

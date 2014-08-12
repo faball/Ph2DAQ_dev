@@ -60,8 +60,8 @@ int main()
 	std::cout << "\nThe value for EXT_TRG is " << dump1 << std::endl;
 	std::cout << "\nThe value for FAKE_DATA is " << dump2 << std::endl;
 
-    cGlib_00.getModule(3)->getCbc(0)->writeRegValues("/afs/cern.ch/user/n/npierre/public/settings/output_00.txt");
-	cGlib_00.getModule(3)->getCbc(1)->writeRegValues("/afs/cern.ch/user/n/npierre/public/settings/output_01.txt");
+    cGlib_00.getModule(3)->getCbc(0)->writeRegValues("output/output_00.txt");
+	cGlib_00.getModule(3)->getCbc(1)->writeRegValues("output/output_01.txt");
 
 	std::cout << "\nHurray, it works !!" << std::endl;
 

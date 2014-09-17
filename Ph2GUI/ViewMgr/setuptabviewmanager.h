@@ -5,6 +5,7 @@
 
 namespace GUI{
     class SetupTab;
+    class SystemController;
     class Settings;
 
     class SetupTabViewManager : public QObject
@@ -13,6 +14,7 @@ namespace GUI{
     public:
         explicit SetupTabViewManager(QObject *parent,
                                      SetupTab& tab,
+                                     SystemController& sysCtrl,
                                      Settings& config);
         //~SetupTabViewManager();
 
@@ -23,8 +25,10 @@ namespace GUI{
     private:
 
         SetupTab& m_setupTab;
+        SystemController& m_systemController;
 
         void WireMessages(Settings &config);
+        void WireSetupTabButtons(Settings &config);
 
         explicit SetupTabViewManager(const SetupTabViewManager& rhs) = delete;
         SetupTabViewManager& operator= (const SetupTabViewManager& rhs) = delete;

@@ -23,9 +23,11 @@ namespace GUI{
         CbcRegistersTab& m_regTab;
         MainView& m_mainView;
         Settings* m_settings;
+
+        SystemController& m_systemController;
         SetupTabViewManager* m_setupTabVm;
 
-        SystemController* m_systemController;
+
 
         explicit Startup(const Startup& rhs) = delete;
         Startup& operator= (const Startup& rhs) = delete;

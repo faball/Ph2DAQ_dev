@@ -40,11 +40,21 @@ namespace GUI{
         BeBoardFWMap   		fBeBoardFWMap; /*!< Map of connections to the BeBoard */
         SettingsMap			fSettingsMap; /*!< Maps the settings */
 
+        void Run(BeBoard *pBeBoard, uint32_t pNthAcq);
+
+    signals:
+        void notifyStatusMessage(QString msg);
+
+    public slots:
+
+        void startInitialiseHw();
+        void startConfigureHw();
+
+
+    private:
+
         void InitialiseHw();
         void ConfigureHw();
-
-        void Run(BeBoard *pBeBoard, uint32_t pNthAcq);
-    private:
 
         uint32_t cShelveId;
         uint32_t cBeId;
@@ -61,6 +71,7 @@ namespace GUI{
 
         explicit SystemController(const SystemController& rhs) = delete;
         SystemController& operator= (const SystemController& rhs) = delete;
+        void SendStatusMessage(QString msg);
     };
 }
 

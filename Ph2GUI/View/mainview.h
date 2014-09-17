@@ -25,9 +25,8 @@ namespace GUI{
         ~MainView();
 
     private:
-        //SetupTab& m_setupTab;
-        //CbcRegistersTab& m_regTab;
         Ui::MainView *ui;
+
     };
 }
 

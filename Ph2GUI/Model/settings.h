@@ -17,30 +17,21 @@ namespace GUI{
         explicit Settings(QObject *parent, QString filename);
         void ParseJsondata();
 
-        //**TODO TIDY UP THIS
-        QList <QString> getShelveId() const {return list_ShelveId;} //pass by value - QList is implicitly shared
-        QList <QString> getBeId() const {return list_BeId;}
-        QString getConnectionId() const {return m_connectionId;}
-        QString getConnectionsName() const {return m_connectionsName;}
-        QString getBoardType() const {return m_boardType;}
-        //TIDY UP THIS**
-
         QVariantMap getshelveIdMap() const {return map_ShelveId;} //QVariantMaps are implicitly shared
-
-        QStandardItemModel* getHwStandardItems() {return CreateItemModel();}
-        //void CreateItemModel();
 
 
     signals:
         void notifyStatusMessage(QString msg);
+        void setHwTree(QStandardItemModel * hwItems);
+
+    public slots:
+        void onLoadButtonClicked(bool cbc2);
 
     private:
         QString m_filename;
-        QString m_connectionsName;
-        QString m_connectionId;
-        QString m_boardType;
 
         QStandardItemModel *CreateItemModel();
+        QStandardItemModel *getHwStandardItems() {return CreateItemModel();}
 
         QVariantMap map_HwDescription;
         QVariantMap map_ShelveId;

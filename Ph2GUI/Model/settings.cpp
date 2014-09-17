@@ -1,14 +1,7 @@
 #include "settings.h"
 #include <QString>
-//#include <QJsonParseError>
-//#include "/usr/include/qjson/QJsonParseError.h"
-//#include <qjson>
 #include <qjson/parser.h>
 //#include <qjson/serializer.h>
-//#include <QJsonObject>
-/*#include <QJsonDocument>
-#include <QJsonArray>
-#include <QJsonParseError>*/
 #include <QStringListModel>
 #include <QDebug>
 #include <QDir>
@@ -39,11 +32,34 @@ namespace GUI
             return;
         }
 
-        SendStatusMessage(tr("Settings file loaded"));
-
         auto result = GetJsonObject(raw_json);
 
         map_HwDescription = result["HwDescription"].toMap();
+
+    }
+
+    void Settings::onLoadButtonClicked(bool cbc2)
+    {
+        if (cbc2)
+        {
+            m_filename = QString("HwDescription.json").toLatin1();
+            ParseJsondata();
+
+            emit setHwTree(getHwStandardItems());
+
+            SendStatusMessage(tr("Settings for 2CBC2 loaded"));
+
+
+        }
+        else
+        {
+            m_filename= QString("HwDescription_8CBC.json").toLatin1();
+            ParseJsondata();
+
+            emit setHwTree(getHwStandardItems());
+
+            SendStatusMessage(tr("Settings for 8CBC2 loaded"));
+        }
 
     }
     QString Settings::ReadJsonFile()
@@ -150,8 +166,6 @@ namespace GUI
                         QList<QStandardItem *> thirdRow = prepareRow(be_v + " : " + be_values.toString());
                         secondRow.first()->appendRow(thirdRow);
                     }
-
-
                 }
             }
         }

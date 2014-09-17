@@ -28,6 +28,9 @@ namespace GUI{
     void SetupTab::setHwTreeView(QStandardItemModel* model)
     {
         ui->treeTest->setModel(model);
+
+        ui->btnInit->setEnabled(true);
+        ui->btnConfig->setEnabled(false);
     }
 
     void SetupTab::onStatusUpdate(const QString &statusMsg)
@@ -52,9 +55,26 @@ namespace GUI{
 
     void SetupTab::on_btnConfig_clicked()
     {
-        //
-        return;
+        emit onBtnCfgClicked();
+        ui->btnConfig->setEnabled(false);
+        ui->btnInit->setEnabled(false);
+    }
+
+    void SetupTab::on_btnLoad_clicked()
+    {
+        emit onBtnLoadSettingsClicked(isCbc2Checked());
+
+    }
+
+    void SetupTab::on_btnInit_clicked()
+    {
+        emit onBtnInitClicked();
+        ui->btnConfig->setEnabled(true);
+        ui->btnInit->setEnabled(false);
+        //ui->btnInit->setDisabled(true);
     }
 }
+
+
 
 

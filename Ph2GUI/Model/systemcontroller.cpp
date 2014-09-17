@@ -35,7 +35,18 @@ namespace GUI
         map_ShelveId(config.getshelveIdMap())
 
     {
-        //InitialiseHw();
+    }
+
+    void SystemController::startInitialiseHw()
+    {
+        InitialiseHw();
+        SendStatusMessage(tr("Initialised settings"));
+    }
+
+    void SystemController::startConfigureHw()
+    {
+        ConfigureHw();
+        SendStatusMessage(tr("Hardware configured"));
     }
 
     void SystemController::InitialiseHw()
@@ -43,6 +54,7 @@ namespace GUI
 
         for (auto& sh_kv: map_ShelveId.keys())
         {
+
             cShelveId=sh_kv.toUInt();
             fShelveVec.push_back((new Shelve(cShelveId)));
 
@@ -161,6 +173,11 @@ namespace GUI
         fBeBoardInterface->Start(pBeBoard);
         fBeBoardInterface->ReadData(pBeBoard, pNthAcq, true );
         fBeBoardInterface->Stop(pBeBoard, pNthAcq);
+    }
+
+    void SystemController::SendStatusMessage(QString msg)
+    {
+        emit notifyStatusMessage(msg);
     }
 }
 

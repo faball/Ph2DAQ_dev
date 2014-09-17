@@ -19,11 +19,17 @@ namespace GUI {
         explicit SetupTab(QWidget *parent);
 
         bool isCbc2Checked();
-        void setHwTreeView(QStandardItemModel *model);
 
         ~SetupTab();
+
+    signals:
+        void onBtnLoadSettingsClicked(bool cbc2);
+        void onBtnInitClicked();
+        void onBtnCfgClicked();
+
     public slots:
         void onStatusUpdate(const QString& statusMsg);
+        void setHwTreeView(QStandardItemModel *model);
 
     private slots:
 
@@ -32,6 +38,10 @@ namespace GUI {
         void on_radio8CBC_clicked();
 
         void on_btnConfig_clicked();
+
+        void on_btnLoad_clicked();
+
+        void on_btnInit_clicked();
 
     private:
         Ui::SetupTab *ui;

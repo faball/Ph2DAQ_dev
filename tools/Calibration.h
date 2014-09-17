@@ -26,6 +26,8 @@
 
 #include <map>
 
+#define READBACK true
+
 using namespace Ph2_HwDescription;
 using namespace Ph2_HwInterface;
 using namespace Ph2_System;
@@ -55,7 +57,8 @@ private:
 	TestGroupMap fTestGroupMap;
 	TestGroupGraphMap fTestGroupGraphMap;
 	std::vector<uint8_t> fVplusValues;
-
+	std::map<Cbc*, TCanvas*> fCbcCanvasMap;
+	
 private:
     
 	void ConstructTestGroup(uint8_t pShelveId, uint8_t pBeId, uint8_t pFeId, uint8_t pCbcId);

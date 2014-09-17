@@ -13,16 +13,9 @@ namespace GUI
     {
         WireMessages(config);
         config.ParseJsondata();
-        config.fetchDefaultValues();
-        config.CreateItemModel();
+        //config.CreateItemModel();
         m_setupTab.setHwTreeView(config.getHwStandardItems());
-        m_setupTab.setShelveId(config.getShelveId());
-        m_setupTab.setConnectionId(config.getConnectionId());
 
-        //m_setupTab.setBeBoardId(config.getBoardID());
-        m_setupTab.setBeBoardId(config.getBeId());
-
-        m_setupTab.setBoardType(config.getBoardType());
     }
 
     void SetupTabViewManager::WireMessages(Settings& config)

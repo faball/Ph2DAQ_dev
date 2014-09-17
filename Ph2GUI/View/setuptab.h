@@ -17,15 +17,11 @@ namespace GUI {
 
     public:
         explicit SetupTab(QWidget *parent);
-        void setBeBoardId(const QList<QString> value);
-        void setBoardType(const QString &value);
-        void setShelveId(const QList<QString> value);//pass by value - QList is implicitly shared
-        void setConnectionId(const QString &value);
-
-        ~SetupTab();
 
         bool isCbc2Checked();
         void setHwTreeView(QStandardItemModel *model);
+
+        ~SetupTab();
     public slots:
         void onStatusUpdate(const QString& statusMsg);
 

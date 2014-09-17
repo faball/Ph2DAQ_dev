@@ -22,9 +22,6 @@ namespace GUI
                            Provider::getSettingsAsSingleton()))
 
     {
-        m_systemController->InitialiseHw();
-        m_systemController->ConfigureHw();
-        m_systemController->fCbcInterface->WriteCbcReg(m_systemController->fShelveVec[0]->getBoard(0)->getModule(0)->getCbc(0),"VCth",0x03);
     }
 
     Startup::~Startup(){

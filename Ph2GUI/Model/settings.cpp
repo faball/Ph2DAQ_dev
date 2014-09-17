@@ -46,47 +46,6 @@ namespace GUI
         map_HwDescription = result["HwDescription"].toMap();
 
     }
-
-    void Settings::fetchDefaultValues()
-    {
-
-        m_connectionsName = map_HwDescription["ConnectionsName"].toString();
-
-        map_ShelveId = map_HwDescription["ShelveId"].toMap();
-
-        if (map_ShelveId.keys().isEmpty())
-        {
-            SendStatusMessage(tr("Shelve ID container empty - error in JSON file"));
-            return;
-        }
-
-        for(auto& kv : map_ShelveId.keys())
-        {
-            list_ShelveId << kv; //creates list for combobox
-        }
-
-        auto top_shelve_id = map_ShelveId.begin().key(); //gets first value for default
-
-        map_BeBoardId = map_ShelveId.value(top_shelve_id).toMap().value("BeBoardId").toMap();
-
-        if (map_BeBoardId.keys().isEmpty())
-        {
-            SendStatusMessage(tr("BeBoard ID container empty - error in JSON file"));
-            return;
-        }
-
-        for (auto& kv : map_BeBoardId.keys())
-        {
-            list_BeId << kv;
-        }
-
-        auto top_be_id = map_BeBoardId.begin().key();
-
-        m_connectionId = map_BeBoardId.value(top_be_id).toMap().value("connectionId").toString();
-        m_boardType = map_BeBoardId.value(top_be_id).toMap().value("boardType").toString();
-
-    }
-
     QString Settings::ReadJsonFile()
     {
         auto default_settings = ReadJsonFromInternalResource();
@@ -108,9 +67,11 @@ namespace GUI
     }
 
     //TODO tidy massively
-    void Settings::CreateItemModel() { //yes I am aware there are faster ways with refelections but I'm pressed for time
+    QStandardItemModel* Settings::CreateItemModel() { //yes I am aware there are faster ways with refelections but I'm pressed for time
 
         QStandardItemModel* standardModel = new QStandardItemModel;
+
+        map_ShelveId = map_HwDescription.value("ShelveId").toMap();
 
         for(auto& sh_kv : map_ShelveId.keys())
         {
@@ -194,8 +155,7 @@ namespace GUI
                 }
             }
         }
-
-        m_HwStandardItems = standardModel;
+        return standardModel;
     }
 
     QList<QStandardItem *> Settings::prepareRow(const QString &first)

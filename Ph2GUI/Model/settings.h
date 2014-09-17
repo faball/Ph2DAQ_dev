@@ -16,7 +16,6 @@ namespace GUI{
     public:
         explicit Settings(QObject *parent, QString filename);
         void ParseJsondata();
-        void fetchDefaultValues();
 
         //**TODO TIDY UP THIS
         QList <QString> getShelveId() const {return list_ShelveId;} //pass by value - QList is implicitly shared
@@ -28,8 +27,8 @@ namespace GUI{
 
         QVariantMap getshelveIdMap() const {return map_ShelveId;} //QVariantMaps are implicitly shared
 
-        QStandardItemModel* getHwStandardItems() const {return m_HwStandardItems;}
-        void CreateItemModel();
+        QStandardItemModel* getHwStandardItems() {return CreateItemModel();}
+        //void CreateItemModel();
 
 
     signals:
@@ -40,6 +39,8 @@ namespace GUI{
         QString m_connectionsName;
         QString m_connectionId;
         QString m_boardType;
+
+        QStandardItemModel *CreateItemModel();
 
         QVariantMap map_HwDescription;
         QVariantMap map_ShelveId;

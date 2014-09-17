@@ -25,26 +25,6 @@ namespace GUI{
         delete ui;
     }
 
-    void SetupTab::setBeBoardId(const QList <QString> value)
-    {
-        ui->comboBeId->addItems(value);
-    }
-
-    void SetupTab::setBoardType(const QString &value)
-    {
-        ui->editBoardType->setText(value);
-    }
-
-    void SetupTab::setShelveId(const QList <QString> value)
-    {
-        ui->comboShelve->addItems(value);
-    }
-
-    void SetupTab::setConnectionId(const QString &value)
-    {
-        ui->editConnectionId->setText(value);
-    }
-
     void SetupTab::setHwTreeView(QStandardItemModel* model)
     {
         ui->treeTest->setModel(model);

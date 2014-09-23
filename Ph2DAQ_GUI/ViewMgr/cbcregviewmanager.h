@@ -8,6 +8,8 @@ namespace GUI{
     public:
         explicit CbcRegViewManager(QObject *parent);
 
+    ~CbcRegViewManager();
+
     private:
         explicit CbcRegViewManager(const CbcRegViewManager& rhs) = delete;
         CbcRegViewManager& operator= (const CbcRegViewManager& rhs) = delete;

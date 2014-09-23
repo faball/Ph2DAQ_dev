@@ -22,6 +22,7 @@ namespace GUI{
 
     SetupTab::~SetupTab()
     {
+        qDebug() << "Destructing " << this;
         delete ui;
     }
 

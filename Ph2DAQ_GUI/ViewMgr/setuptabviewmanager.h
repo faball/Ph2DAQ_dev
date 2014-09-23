@@ -16,8 +16,7 @@ namespace GUI{
                                      SetupTab& tab,
                                      SystemController& sysCtrl,
                                      Settings& config);
-        //~SetupTabViewManager();
-
+    ~SetupTabViewManager();
 
     signals:
         void notifyStatusUpdated(const QString& value);

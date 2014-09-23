@@ -42,6 +42,9 @@ namespace GUI{
 
         void Run(BeBoard *pBeBoard, uint32_t pNthAcq);
 
+    ~SystemController();
+
+
     signals:
         void notifyStatusMessage(QString msg);
 
@@ -67,11 +70,11 @@ namespace GUI{
 
         QVariantMap map_ShelveId; //TODO don't pass in like this
 
-
+        void SendStatusMessage(QString msg);
 
         explicit SystemController(const SystemController& rhs) = delete;
         SystemController& operator= (const SystemController& rhs) = delete;
-        void SendStatusMessage(QString msg);
+
     };
 }
 

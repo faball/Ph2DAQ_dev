@@ -22,6 +22,12 @@ namespace GUI
     {
     }
 
+    Settings::~Settings()
+    {
+        qDebug() << "Destructing " << this;
+    }
+
+
     void Settings::ParseJsondata()
     {
 

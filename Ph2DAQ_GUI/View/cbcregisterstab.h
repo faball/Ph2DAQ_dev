@@ -20,7 +20,7 @@ namespace GUI {
 
     public:
         explicit CbcRegistersTab(QWidget *parent);
-        ~CbcRegistersTab();
+    ~CbcRegistersTab();
 
     private:
         Ui::CbcRegistersTab *ui;

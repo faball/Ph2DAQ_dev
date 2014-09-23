@@ -1,8 +1,10 @@
 #include "setuptabviewmanager.h"
+#include "utils.h"
 #include "View/setuptab.h"
 #include "Model/systemcontroller.h"
 #include "Model/settings.h"
 #include <QDebug>
+
 
 namespace GUI
 {
@@ -16,6 +18,11 @@ namespace GUI
     {
         WireMessages(config);
         WireSetupTabButtons(config);
+    }
+
+    SetupTabViewManager::~SetupTabViewManager()
+    {
+        qDebug() << "Destructing " << this;
     }
 
     void SetupTabViewManager::WireMessages(Settings& config)

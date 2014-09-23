@@ -12,6 +12,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include"provider.h"
+
 #include<QDebug>
 
 #include <QVariantMap>
@@ -35,6 +37,11 @@ namespace GUI
         map_ShelveId(config.getshelveIdMap())
 
     {
+    }
+
+    SystemController::~SystemController()
+    {
+        qDebug() << "Destructing " << this;
     }
 
     void SystemController::startInitialiseHw()

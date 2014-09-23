@@ -2,8 +2,6 @@
 #define MAINVIEW_H
 
 #include <QMainWindow>
-#include "View/setuptab.h"
-#include "View/setuptab.h"
 
 namespace Ui {
     class MainView;
@@ -13,6 +11,7 @@ namespace GUI{
 
     class SetupTab;
     class CbcRegistersTab;
+    class DataTestTab;
 
     class MainView : public QMainWindow
     {
@@ -21,7 +20,8 @@ namespace GUI{
     public:
         explicit MainView(QWidget *parent,
                           GUI::SetupTab &setup,
-                          GUI::CbcRegistersTab &reg);
+                          GUI::CbcRegistersTab &reg,
+                          GUI::DataTestTab &data);
         ~MainView();
 
     private:

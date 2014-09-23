@@ -18,7 +18,7 @@ namespace GUI{
         void ParseJsondata();
 
         QVariantMap getshelveIdMap() const {return map_ShelveId;} //QVariantMaps are implicitly shared
-
+    ~Settings();
 
     signals:
         void notifyStatusMessage(QString msg);

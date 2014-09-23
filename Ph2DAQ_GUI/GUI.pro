@@ -38,7 +38,11 @@ SOURCES += main.cpp\
     Model/systemcontroller.cpp \
     View/cbcregisterstab.cpp \
     ViewMgr/cbcregviewmanager.cpp \
-    provider.cpp
+    provider.cpp \
+    lib/qcustomplot.cpp \
+    View/datatesttab.cpp \
+    Model/datatest.cpp \
+    ViewMgr/datatestviewmanager.cpp
 
 HEADERS  += View/mainview.h \
     startup.h \
@@ -49,11 +53,16 @@ HEADERS  += View/mainview.h \
     Model/systemcontroller.h \
     View/cbcregisterstab.h \
     ViewMgr/cbcregviewmanager.h \
-    provider.h
+    provider.h \
+    lib/qcustomplot.h \
+    View/datatesttab.h \
+    Model/datatest.h \
+    ViewMgr/datatestviewmanager.h
 
 FORMS    += View/mainview.ui \
     View/setuptab.ui \
-    View/cbcregisterstab.ui
+    View/cbcregisterstab.ui \
+    View/datatesttab.ui
 
 OTHER_FILES +=
 

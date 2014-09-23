@@ -1,6 +1,21 @@
 #include "cbcregisterstab.h"
 #include "ui_cbcregisterstab.h"
 
+#include <QVector>
+
+#include "../HWDescription/Cbc.h"
+#include "../HWDescription/Module.h"
+#include "../HWDescription/BeBoard.h"
+#include "../HWInterface/CbcInterface.h"
+#include "../HWInterface/BeBoardInterface.h"
+#include "../HWDescription/Definition.h"
+#include "../HWInterface/Utilities.h"
+#include "../Model/systemcontroller.h"
+
+using namespace Ph2_HwDescription;
+using namespace Ph2_HwInterface;
+//using namespace Ph2_System;
+
 namespace GUI {
 
     CbcRegistersTab::CbcRegistersTab(QWidget *parent) :
@@ -13,23 +28,11 @@ namespace GUI {
 
     CbcRegistersTab::~CbcRegistersTab()
     {
+        qDebug() << "Destructing " << this;
         delete ui;
     }
 
     void CbcRegistersTab::startup()
     {
-        model = new QStandardItemModel(4,2,this);
-        ui->tableOne->setModel(model);
-
-        for(int row = 0; row < 4; row++)
-            {
-                for(int col = 0; col < 2; col++)
-                {
-                    QModelIndex index = model->index(row,col,QModelIndex());
-                    // 0 for all data
-                    model->setData(index,0);
-                }
-            }
-
     }
 }
